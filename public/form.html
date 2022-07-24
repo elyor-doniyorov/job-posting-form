@@ -15,7 +15,10 @@
         Thank you for taking time to post a job! 
       </p>
     </header>
-    <form class="bg-white py-8 px-3 rounded-md md:w-3/5 m-auto">
+
+    <div id="error"></div>
+
+    <form id="myform" class="bg-white py-8 px-3 rounded-md md:w-3/5 m-auto">
       <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
         <label for="title" class="text-xl md:text-2xl">Title</label>
         <input 
@@ -36,8 +39,8 @@
             <button type="button" id="previewBtn" class="bg-red-600 border-none text-white p-1 text-base cursor-pointer">Preview</button>
           </div>
           <div class="">
-            <textarea id="editor" class="block w-full bg-slate text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2" name="description" placeholder="Write" required></textarea>
-            <div id="preview" style="display:none"></div>
+            <textarea id="editor" class="block w-full bg-slate text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2" name="description" placeholder="Write" required> </textarea>
+            <div id="preview" class="hidden w-full bg-slate text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2"></div>
           </div>
         </div>
       </div>
@@ -133,7 +136,7 @@
 
       <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
         <label for="annualSalary">Annual Salary (between $500 and $3000):</label>
-        <input type="range" name="annualSalary" value="1000" id="annualSalary" class="form-control" min="500" max="3000">
+        <input type="range" name="annualSalary" value="1000" id="annualSalary" class="text-xl md:text-2xl" min="500" max="3000">
       </div>
 
       <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
@@ -157,5 +160,7 @@
 
     </form>
   </main>
+  <script src="showdown.js"></script>
+  <script src="form.js"></script>
 </body>
 </html>
