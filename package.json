@@ -1,0 +1,23 @@
+{
+  "name": "job-posting-form",
+  "version": "1.0.0",
+  "description": "> Oneskool form project which is for job posting was build using HTML, Tailwind CSS, JavaScript, Markdown-it plugin etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elyor-doniyorov/job-posting-form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elyor-doniyorov/job-posting-form/issues"
+  },
+  "homepage": "https://github.com/elyor-doniyorov/job-posting-form#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.6"
+  }
+}
