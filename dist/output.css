@@ -574,6 +574,18 @@ video {
   margin: 1rem;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-3 {
+  margin: 0.75rem;
+}
+
+.m-1 {
+  margin: 0.25rem;
+}
+
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -587,6 +599,11 @@ video {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .mt-2 {
@@ -663,6 +680,18 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
 }
 
 .rounded-md {

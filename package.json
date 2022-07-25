@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/elyor-doniyorov/job-posting-form#readme",
   "dependencies": {
+    "boxicons": "^2.1.2",
     "markdown-it": "^13.0.1",
     "showdown": "^2.1.0"
   }
