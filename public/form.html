@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../dist/output.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <title>Post a Job Form</title>
 </head>
 <body class="bg-gray-light font-sans font-normal text-gray-dark m-0 p-2">
@@ -151,19 +152,36 @@
           <button id="btn">Check</button>
         </div>
       </div> 
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <div class="g-recaptcha" data-sitekey="6LeQ7BshAAAAALfDgHxnkd36fv2TYaLiJRl_AVrN"></div>
+      </div>
+      <br/>
   
       <div class="flex flex-col flex-shrink-0 flex-grow-0 m-4 md:m-8">
-        <button 
-          id="sbtn" 
-          class="bg-facebookColor border-none text-white p-3 text-base md:text-xl cursor-pointer w-full"
+        <input 
           type="submit" 
+          name="submit"
+          value="submit"
+          id="submit" 
+          class="bg-facebookColor border-none text-white p-3 text-base md:text-xl cursor-pointer w-full"
           >
-          Submit
-        </button>
       </div>
 
     </form>
   </main>
+
+  <script>document.getElementById("myform").addEventListener("submit",function(evt)
+    {
+        var response = grecaptcha.getResponse();
+        if(response.length == 0)
+        {
+            alert("please verify you are humann!");
+            evt.preventDefault();
+            return false;
+        }
+    });</script>
+
   <script src="showdown.js"></script>
   <script src="form.js"></script>
 </body>
