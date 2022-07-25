@@ -18,7 +18,8 @@
 
 ## How to use template 
 
-- After copy, do a right click on `index.html` to open it in the live server.
+- Run this `npx tailwindcss -i ./public/style.css -o ./dist/output.css --watch` the CLI tool to scan your template files for classes and build your CSS.
+- After that, do a right click on `index.html` to open it in the live server.
 
 
 ## Authors
