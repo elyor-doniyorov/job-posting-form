@@ -18,7 +18,7 @@
       </p>
     </header>
 
-    <form id="myform" class="bg-white py-8 px-3 rounded-md md:w-3/5 m-auto">
+    <form name="form1" id="myform" class="bg-white py-8 px-3 rounded-md md:w-3/5 m-auto" onload='document.form1.text1.focus()'>
       <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
         <label for="title" class="text-xl md:text-2xl">Title</label>
         <input 
@@ -168,8 +168,7 @@
       <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
         <label for="expiresAt" class="text-xl md:text-2xl">Expiry Date</label>
         <div class="">
-          <input type="text" value="" autocomplete="off" placeholder="MM/DD/YY" id="ExpiryDate" class="block w-full bg-slate h-10 text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2">
-          <button id="btn">Check</button>
+          <input type="text" name='text1' value="" autocomplete="off" placeholder="MM/DD/YY" id="ExpiryDate" class="block w-full bg-slate h-10 text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2">
         </div>
       </div> 
 
@@ -185,6 +184,7 @@
           value="submit"
           id="submit" 
           class="bg-facebookColor border-none text-white p-3 text-base md:text-xl cursor-pointer w-full"
+          onclick="validatedate(document.form1.text1)"
           >
       </div>
 
