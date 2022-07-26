@@ -9,8 +9,7 @@ const skills = document.getElementById('skills');
 const employmentType = document.getElementById('employmentType');
 const remotePolicy = document.getElementById('remotePolicy');
 
-
-
+// Markdown-i and showdownjs for Job Description field below
 const converter = new showdown.Converter();
 
 showEditor.addEventListener("keyup", evt => {
@@ -33,6 +32,59 @@ previewBtn.addEventListener("click", () => {
   showEditor.style.display = "none";
 });
 
+// Boxicons
+const headingIcon = document.getElementById('heading');
+const boldIcon = document.getElementById('bold');
+const italicIcon = document.getElementById('italic');
+const chevronRIcon = document.getElementById('chevronR');
+const expandHIcon = document.getElementById('expandH');
+const linkQuoteIcon = document.getElementById('linkQuote');
+const listUlIcon = document.getElementById('listUl');
+const listOlIcon = document.getElementById('listOl');
+const checkboxChIcon = document.getElementById('checkboxCh');
+const atIcon = document.getElementById('at');
+const messageIcon = document.getElementById('message');
+const replyIcon = document.getElementById('reply');
+
+headingIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '### ';
+})
+boldIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '****';
+})
+italicIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '__';
+})
+chevronRIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '> ';
+})
+expandHIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '``';
+})
+linkQuoteIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '[](url)';
+})
+listUlIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '- ';
+})
+listOlIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '1. ';
+})
+checkboxChIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '- [ ] ';
+})
+atIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '@';
+})
+messageIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '#';
+})
+replyIcon.addEventListener("click", () => {
+  showEditor.innerHTML = '';
+})
+
+
+// Submit Form
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
