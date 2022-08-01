@@ -637,6 +637,30 @@ video {
   height: 1rem;
 }
 
+.h-3\.5 {
+  height: 0.875rem;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-px {
+  height: 1px;
+}
+
+.h-72 {
+  height: 18rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.max-h-96 {
+  max-height: 24rem;
+}
+
 .w-full {
   width: 100%;
 }
