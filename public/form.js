@@ -21,13 +21,11 @@ showEditor.addEventListener("keyup", evt => {
 })
 
 writeBtn.addEventListener("click", () => {
-  console.log("show editor")
   showEditor.style.display = "block";
   showPreview.style.display = "none";
 });
 
 previewBtn.addEventListener("click", () => {
-  console.log("show preview")
   showPreview.style.display = "block";
   showEditor.style.display = "none";
 });
@@ -69,18 +67,6 @@ listUlIcon.addEventListener("click", () => {
 })
 listOlIcon.addEventListener("click", () => {
   showEditor.innerHTML = '1. ';
-})
-checkboxChIcon.addEventListener("click", () => {
-  showEditor.innerHTML = '- [ ] ';
-})
-atIcon.addEventListener("click", () => {
-  showEditor.innerHTML = '@';
-})
-messageIcon.addEventListener("click", () => {
-  showEditor.innerHTML = '#';
-})
-replyIcon.addEventListener("click", () => {
-  showEditor.innerHTML = '';
 })
 
 
@@ -184,6 +170,7 @@ const validateInputs = () => {
   const skillsValue = skills.value.trim();
 
 
+
   // Title validation
   if(titleValue == "") {
     setError(title, ' ** Title is required');
@@ -197,6 +184,10 @@ const validateInputs = () => {
   else{
     setSuccess(title);
   }
+
+  localStorage.setItem("is_title", JSON.stringify(titleValue));
+  const item = JSON.parse(localStorage.getItem('titleValue'));
+  console.log(item)
    
 
   // Textarea validation
@@ -209,6 +200,8 @@ const validateInputs = () => {
   else{
     setSuccess(showEditor);
   }
+
+  localStorage.setItem("is_showEditor", editorValue);
 
   // Education validation
   if(educationValue == "") {
@@ -224,6 +217,8 @@ const validateInputs = () => {
     setSuccess(education);
   }
 
+  localStorage.setItem("is_education", educationValue);
+
   // Skills validation
   if(skillsValue == "") {
     setError(skills, ' ** Skills are required');
@@ -238,6 +233,8 @@ const validateInputs = () => {
     setSuccess(skills);
   }
 
+  localStorage.setItem("is_skills", skillsValue);
+
   // Emplyment type validation
   if(employmentType.value === 'Select employment type') {
     setError(employmentType, ' ** Select employment type')
@@ -246,6 +243,8 @@ const validateInputs = () => {
     setSuccess(employmentType);
   }
 
+  localStorage.setItem("is_employmentType", employmentType.value);
+
   // Remote Policy validation
   if(remotePolicy.value === 'Select remote policy') {
     setError(remotePolicy, ' ** Select remote policy')
@@ -253,4 +252,6 @@ const validateInputs = () => {
   else{
     setSuccess(remotePolicy);
   }
+
+  localStorage.setItem("is_remotePolicy", remotePolicy.value);
 }
