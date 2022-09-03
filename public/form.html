@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../dist/output.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+  <title>Post a Job Form</title>
+</head>
+<body class="bg-gray-light font-sans font-normal text-gray-dark m-0 p-2">
+  <main class="max-w-screen-xl my-12 mx-auto">
+    <header class="text-center my-8">
+      <h1 class="text-2xl md:text-3xl">Post a Job</h1>
+      <p class="mt-2 md:text-xl">
+        Thank you for taking time to post a job! 
+      </p>
+    </header>
+
+    <form name="form1" id="myform" class="bg-white py-8 px-3 rounded-md md:w-3/5 m-auto" onload='document.form1.text1.focus()'>
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <label for="title" class="text-xl md:text-2xl">Title</label>
+        <input 
+          type="text" 
+          name="title" 
+          id="title" 
+          class="block w-full h-10 bg-slate text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2" 
+          placeholder="Enter job title"
+          autocomplete="off"
+        >
+        <div id="error" class="text-red font-bold mt-1"></div>
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8"> 
+        <label for="description" class="text-xl md:text-2xl">Description</label>
+        <div class="">
+          <div class="flex justify-between">
+            <div class="flex">
+              <button type="button" id="writeBtn" class="bg-blue border-none text-white m-1 p-2 text-base cursor-pointer">Write</button>
+              <button type="button" id="previewBtn" class="bg-red border-none text-white m-1 p-2 text-base cursor-pointer">Preview</button>
+            </div>
+            <div class="">
+              <box-icon name='heading' id="heading" class="cursor-pointer hover:bg-gray-light"></box-icon>
+              <box-icon name='bold' id="bold" class="cursor-pointer hover:bg-gray-light"></box-icon>
+              <box-icon name='italic' id="italic" class="cursor-pointer hover:bg-gray-light"></box-icon>
+              
+              <box-icon name='chevron-right' id="chevronR" class="cursor-pointer hover:bg-gray-light"></box-icon>
+              <box-icon name='expand-horizontal' id="expandH" class="cursor-pointer hover:bg-gray-light"></box-icon>
+              <box-icon name='link' id="linkQuote" class="cursor-pointer hover:bg-gray-light"></box-icon>
+
+              <box-icon name='list-ul' id="listUl" class="cursor-pointer hover:bg-gray-light"></box-icon>
+              <box-icon name='list-ol' id="listOl" class="cursor-pointer hover:bg-gray-light"></box-icon>
+            </div>
+          </div>
+          <div>
+            <textarea id="editor" class="block w-full h-96 bg-slate text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2" name="description" placeholder="Write"> </textarea>
+            <div id="preview" class="hidden w-full h-72 bg-slate text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2"></div>
+            <div id="error" class="text-red font-bold mt-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <label for="education" class="text-xl md:text-2xl">Education</label>
+        <input 
+          type="text" 
+          name="education" 
+          id="education" 
+          class="block w-full bg-slate h-10 text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2" 
+          placeholder="Enter education level" 
+          autocomplete="off"
+          >
+          <div id="error" class="text-red font-bold mt-1"></div>
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <label for="skills" class="text-xl md:text-2xl">Skills</label>
+        <input 
+          type="text" 
+          name="skills" 
+          id="skills" 
+          class="block w-full bg-slate h-10 text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2"
+          placeholder="Enter skills needed"
+          autocomplete="off" 
+          >
+          <div id="error" class="text-red font-bold mt-1"></div>
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <label for="employmentType" class="text-xl md:text-2xl">Employment Type</label>
+          <select name="employmentType" id="employmentType" class="block w-full bg-slate h-10 text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2">
+            <option value="Select employment type">Select employment type</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Internship">Internship</option>
+            <option value="Contract">Contract</option>
+          </select>
+          <div id="error" class="text-red font-bold mt-1"></div>
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8"">
+        <p class="text-xl md:text-2xl">Job Status</p>
+        <p>
+          <label class="flex items-center">
+            <input type="radio" name="answer" id="active" class="w-4 h-4" checked>
+            <span class="text-base md:text-xl ml-3">Active</span> 
+          </label>
+        </p>
+        <p>
+          <label class="flex items-center">
+            <input type="radio" name="answer" id="notActive" class="w-4 h-4" checked>
+            <span class="text-base md:text-xl ml-3">Not Active</span>
+          </label>
+        </p>
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <label for="country" class="text-xl md:text-2xl">Country</label>
+        <input 
+          type="text" 
+          name="country" 
+          value="Uzbekistan" 
+          id="country" 
+          autocomplete="off"
+          class="block w-full bg-slate h-10 text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2" 
+          readonly="readonly"
+          >
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <label for="remotePolicy" class="text-xl md:text-2xl">Remote Policy</label>
+          <select name="remotePolicy" id="remotePolicy" class="block w-full bg-slate h-10 text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2">
+            <option value="Select remote policy">Select remote policy</option>
+            <option value="In-Office">In-Office</option>
+            <option value="Online">Online</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+          <div id="error" class="text-red font-bold mt-1"></div>
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <p class="text-xl md:text-2xl">Sponsor Visa</p>
+        <p>
+          <label class="flex items-center">
+            <input type="radio" name="bool" id="true" class="w-4 h-4" checked>
+            <span class="text-base md:text-xl ml-3">True</span> 
+          </label>
+        </p>
+        <p>
+          <label class="flex items-center">
+            <input type="radio" name="bool" id="false" class="w-4 h-4" checked>
+            <span class="text-base md:text-xl ml-3">False</span> 
+          </label>
+        </p>
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <label for="annualSalary">Annual Salary (between $500 and $3000):</label>
+        <input type="range" name="annualSalary" value="1000" id="annualSalary" class="text-xl md:text-2xl" min="500" max="3000">
+      </div>
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <label for="expiresAt" class="text-xl md:text-2xl">Expiry Date</label>
+        <div class="">
+          <input type="text" name='text1' value="" autocomplete="off" placeholder="MM/DD/YY" id="ExpiryDate" class="block w-full bg-slate h-10 text-base py-1 md:py-2 px-3 rounded-md border border-solid border-transparent mt-2">
+        </div>
+      </div> 
+
+      <div class="flex flex-shrink-0 flex-grow-0 flex-col m-4 md:m-8">
+        <div class="g-recaptcha" data-sitekey="6LeQ7BshAAAAALfDgHxnkd36fv2TYaLiJRl_AVrN"></div>
+      </div>
+      <br/>
+  
+      <div class="flex flex-col flex-shrink-0 flex-grow-0 m-4 md:m-8">
+        <input 
+          type="submit" 
+          name="submit"
+          value="submit"
+          id="submit" 
+          class="bg-facebookColor border-none text-white p-3 text-base md:text-xl cursor-pointer w-full"
+          onclick="validatedate(document.form1.text1)"
+          >
+      </div>
+
+    </form>
+  </main>
+
+  <script>document.getElementById("myform").addEventListener("submit",function(evt)
+    {
+        var response = grecaptcha.getResponse();
+        if(response.length == 0)
+        {
+            alert("please verify you are humann!");
+            evt.preventDefault();
+            return false;
+        }
+    });</script>
+
+  <script src="showdown.js"></script>
+  <script src="form.js"></script>
+</body>
+</html>
